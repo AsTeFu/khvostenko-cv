@@ -1,36 +1,7 @@
 ---
 import SkillsList from "../components/skills-list.astro";
 
-const aboutMe = [
-  "Разрабатываю клиентские приложения на React, но имею опыт и с другими реактивными фреймворками. Люблю сложные и интересные задачи, топлю за качество и чистоту кода. Стараюсь приносить пользу через свою работу команде и бизнесу.",
-  "Работал как в больших командах, так и был единственным сотрудником на проекте. За прозрачные и гибкие процессы, готов быть наставником для молодых специалистов.",
-];
-
-const skills = [
-  "React",
-  "JavaScript",
-  "TypeScript",
-  "HTML",
-  "CSS",
-  "React Query",
-  "Redux",
-  "Tailwind",
-  "Shadcn UI",
-  "Radix-UI",
-  "MUI",
-  "PWA",
-  "Service Worker",
-  "Eleventy",
-  "Preact",
-  "Flutter",
-  "Dart",
-  "React-Native",
-  "Nginx",
-  "Docker",
-  "Gitlab CI/CD",
-];
-
-const keySkills = ["1", "2", "Проведение код-ревью", "4"];
+import { aboutMe, keySkills, skills } from "../config";
 ---
 
 <section class="grid gap-8">
@@ -40,10 +11,10 @@ const keySkills = ["1", "2", "Проведение код-ревью", "4"];
 
   <SkillsList skills={skills} />
 
-  <details>
-    <summary>Ключевые навыки</summary>
+  <details class="text-neutral-400">
+    <summary class="text-h4 cursor-pointer">Ключевые навыки</summary>
 
-    <ul>
+    <ul class="grid gap-1 list-disc pl-6 mt-2">
       {keySkills.map((skill) => <li>{skill}</li>)}
     </ul>
   </details>

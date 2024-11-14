@@ -5,7 +5,6 @@ export class Project {
   public role: string;
   public workedOn: string[];
 
-
   constructor(data: {
     title: string; 
     description: string[]; 

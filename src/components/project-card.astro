@@ -21,7 +21,7 @@ const { project } = Astro.props;
   </div>
 
   <details class="text-neutral-400">
-    <summary class="text-h4">Чем занимался</summary>
+    <summary class="text-h4 cursor-pointer">Чем занимался</summary>
 
     <ul class="grid gap-1 list-disc pl-6 mt-2">
       {project.workedOn.map((task) => <li>{task}</li>)}

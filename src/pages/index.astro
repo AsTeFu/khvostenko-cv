@@ -6,7 +6,7 @@ import Education from "../sections/education.astro";
 import Projects from "../sections/projects.astro";
 import WorkExperience from "../sections/work-experience.astro";
 
-import meImage from "../assets/images/me-square.jpeg";
+import { email, telegram, name, timezone, city, role, since, meImage } from "../config";
 ---
 
 <BaseLayout>
@@ -25,24 +25,24 @@ import meImage from "../assets/images/me-square.jpeg";
 		/>
 
 		<div class="flex flex-col">
-			<h1 class="text-h1 mb-1">Вячеслав Хвостенко</h1>
+			<h1 class="text-h1 mb-1">{name}</h1>
 
-			<p class="text-neutral-400">📍 Омск, +3</p>
+			<p class="text-neutral-400">📍 {city}, {timezone}</p>
 
 			<h3 class="text-h3 mt-6">
-				Frontend разрабочтик,
-				<time class="text-small text-neutral-400">since 2020</time>
+				{role},
+				<time class="text-small text-neutral-400">{since}</time>
 			</h3>
 
 			<address class="flex flex-col mt-2.5 gap-0.5">
 				<span class="text-p">
 					Telegram:
-					<a href="https://t.me/astefu">@astefu</a>
+					<a href={"https://t.me/" + telegram}>@{telegram}</a>
 				</span>
 
 				<span class="text-p">
 					Email:
-					<a href="mailto:vyacheslav.khvostenko@vk.com">vyacheslav.khvostenko@vk.com</a>
+					<a href={"mailto:" + email}>{email}</a>
 				</span>
 			</address>
 		</div>

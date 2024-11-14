@@ -1,31 +1,31 @@
 ---
 import SectionContainer from "../components/section-container.astro";
+
+import { jobs } from "../config";
 ---
 
 <SectionContainer title="Опыт работы">
-  <div class="grid gap-6 md:gap-12 md:grid-cols-[2fr_3fr]">
-    <div>
-      <h3 class="text-h3 mb-4">
-        Frontend-разработчик,
-        <a class="text-blue-400 visited:text-blue-400" href="https://7bits.ru">7bits</a>
-      </h3>
+  {
+    jobs.map((job) => (
+      <div class="grid gap-6 md:gap-12 md:grid-cols-[2fr_3fr]">
+        <div>
+          <h3 class="text-h3 mb-4">
+            {job.title},
+            <a class="text-blue-400 visited:text-blue-400" href="https://7bits.ru">
+              {job.companyName}
+            </a>
+          </h3>
 
-      <p>Сентябрь 2020 — по настоящее время</p>
-      <p class="text-neutral-400">4 года 3 месяца</p>
-    </div>
+          <p>{job.date}</p>
+          <p class="text-neutral-400">{job.workExperience}</p>
+        </div>
 
-    <div class="grid gap-4">
-      <p>
-        Большую часть времени работал Frontend-разработчиком, но начинал как Full-stack и успел
-        поучаствовать в разработке backend на Java. Последние полтора года паралельно находился в
-        роли менеджера проектов.
-      </p>
-
-      <p>
-        Был преподавателем внутренних курсов для стажеров по Frontend направлению. Занимался
-        обновлением и написанием новых учебных материалов, проводил лекции и воркшопы. Регулярно был
-        наставником для джунов.
-      </p>
-    </div>
-  </div>
+        <div class="grid gap-4">
+          {job.description.map((text) => (
+            <p class="text-pretty">{text}</p>
+          ))}
+        </div>
+      </div>
+    ))
+  }
 </SectionContainer>

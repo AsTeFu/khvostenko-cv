@@ -1,29 +1,20 @@
 ---
 import EducationCard from "../components/education-card.astro";
 import SectionContainer from "../components/section-container.astro";
+import { educations } from "../config";
 ---
 
 <SectionContainer title="Образование">
   <div class="grid gap-8">
-    <EducationCard
-      title="Математика и компьютерные науки"
-      date="Сентябрь 2018 — Август 2023"
-      place="Омский Государственный Университет"
-      description="Факультет компютерных наук"
-    />
-
-    <EducationCard
-      title="Fullstack разработка"
-      date="2019-2020"
-      place="IT-lift"
-      description="Годовой курс разработки от 7bits"
-    />
-
-    <EducationCard
-      title="Backend разработка"
-      date="2019"
-      place="Школа разработки Тамтэк"
-      description=""
-    />
+    {
+      educations.map((education) => (
+        <EducationCard
+          title={education.title}
+          date={education.date}
+          place={education.place}
+          description={education.description}
+        />
+      ))
+    }
   </div>
 </SectionContainer>
