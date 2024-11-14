@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/base-layout.astro";
+import AboutMe from "../sections/about-me.astro";
+import Education from "../sections/education.astro";
+import Projects from "../sections/projects.astro";
+import WorkExperience from "../sections/work-experience.astro";
+
+import meImage from "../assets/images/me-square.jpeg";
+---
+
+<BaseLayout>
+	<header
+		class="grid md:grid-cols-[auto_1fr] gap-12 pt-20 pb-6 px-4 grid-cols-1 md:grid-rows-1 grid-rows-2 justify-items-center"
+	>
+		<Image
+			alt="Фотография меня"
+			format="avif"
+			quality={100}
+			src={meImage}
+			height={200}
+			width={200}
+			loading="eager"
+			class="rounded-[100px] hover:rounded-[50px] hover:rotate-6 transition-all"
+		/>
+
+		<div class="flex flex-col">
+			<h1 class="text-h1 mb-1">Вячеслав Хвостенко</h1>
+
+			<p class="text-neutral-400">📍 Омск, +3</p>
+
+			<h3 class="text-h3 mt-6">
+				Frontend разрабочтик,
+				<time class="text-small text-neutral-400">since 2020</time>
+			</h3>
+
+			<address class="flex flex-col mt-2.5 gap-0.5">
+				<span class="text-p">
+					Telegram:
+					<a href="https://t.me/astefu">@astefu</a>
+				</span>
+
+				<span class="text-p">
+					Email:
+					<a href="mailto:vyacheslav.khvostenko@vk.com">vyacheslav.khvostenko@vk.com</a>
+				</span>
+			</address>
+		</div>
+	</header>
+
+	<main class="grid gap-8 mt-8 mb-12 px-6">
+		<AboutMe />
+
+		<WorkExperience />
+
+		<Projects />
+
+		<Education />
+	</main>
+</BaseLayout>

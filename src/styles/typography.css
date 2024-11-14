@@ -1,0 +1,25 @@
+@layer base {
+  @font-face {
+    font-family: 'Nunito Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-display: swap;
+    src: url('/src/assets/fonts/Nunito-sans.woff2') format('woff2');
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      'wdth' 100,
+      'YTLC' 500;
+  }
+
+  body {
+    @apply font-nunito text-p text-neutral-200;
+  }
+
+  a {
+    @apply text-blue-700 hover:text-blue-500 visited:text-purple-700;
+  }
+
+  p {
+    @apply text-p text-pretty;
+  }
+}
